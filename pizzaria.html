@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizzaria PUD</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="header-pizzaria">
+    <div class="header-left">
+      <img src="PUDlogo.png" alt="Logo da Pizzaria" class="logo">
+      <div class="logo-text">Pizzaria PUD</div>
+      <nav class="nav-links">
+        <a href="#contato">Contato</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#localizacao">Localização</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <a href="#" class="carrinho-btn">
+        <img src="carrinho.png" alt="Carrinho de compras">
+        <span class="carrinho-contador">0</span>
+      </a>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="close-menu-btn" id="close-menu-btn" aria-label="Fechar menu">&times;</button>
+    <a href="#contato" class="menu-item">Contato</a>
+    <a href="#sobre" class="menu-item">Sobre Nós</a>
+    <a href="#localizacao" class="menu-item">Localização</a>
+    <a href="https://wa.me/5511961811390" class="menu-item whatsapp-menu-link" target="_blank">
+      Fale conosco (WhatsApp)
+    </a>
+  </nav>
+
+  <div class="pizzas-container">
+
+    <div class="pizza-card">
+      <img src="imgpizza korok.jpeg" alt="Pizza Korok Garden">
+      <h3>Korok Garden</h3>
+      <p>R$ 39,90</p>
+      <button onclick="adicionarAoCarrinho('Korok Garden', 39.90)">Adicionar ao carrinho</button>
+      <div class="extra-info-hover">
+        <div class="detalhes-pizza-hover">
+          <p>Pizza vegetariana com cogumelos, pimentões, tomate cereja e rúcula. Os Koroks são pequenos espíritos da floresta que aparecem em jogos como Breath of the Wild e Wind Waker. A mistura de vegetais frescos lembra o estilo de vida natural e verde deles.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img src="img pizza zora.jpeg" alt="Pizza Zora's Catch">
+      <h3>Zora’s Catch</h3>
+      <p>R$ 42,90</p>
+      <button onclick="adicionarAoCarrinho('Zora’s Catch', 42.90)">Adicionar ao carrinho</button>
+      <div class="extra-info-hover">
+        <div class="detalhes-pizza-hover">
+          <p>Pizza com aliche, queijo, azeitonas e rúcula. Sabor do mar direto de Zora’s Domain. Os Zoras são uma raça aquática da franquia, então essa pizza com peixes (aliche) é perfeita para homenageá-los — como se fosse uma iguaria pescada direto das águas de Zora’s Domain.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img src="great fary.jpg" alt="Pizza Great Fairy's Blessing">
+      <h3>Great Fairy's Blessing</h3>
+      <p>R$ 50,00</p>
+      <button onclick="adicionarAoCarrinho('Great Fairy\'s Blessing', 50.00)">Adicionar ao carrinho</button>
+      <div class="extra-info-hover">
+        <div class="detalhes-pizza-hover">
+          <p>Uma pizza encantadora com burrata cremosa no centro, molho pesto de manjericão fresco, tomatinhos confit e um toque de azeite aromático. Inspirada nas Grandes Fadas da franquia, essa pizza representa a beleza, o cuidado e o poder restaurador de suas fontes mágicas. Cada mordida é como receber uma bênção revigorante direto da Fonte das Fadas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img src="Operação Lisboa.jpeg" alt="Pizza Portuguesa - Operação Lisboa">
+      <h3>Operação Lisboa</h3>
+      <p>R$ 54,90</p>
+      <button onclick="adicionarAoCarrinho('Operação Lisboa', 54.90)">Adicionar ao carrinho</button>
+      <div class="extra-info-hover">
+        <div class="detalhes-pizza-hover">
+          <p>Operação Lisboa: A Pizza da Resistência - Entre um plano mirabolante e outro, até o Professor precisa de uma pausa e nada melhor que uma clássica pizza portuguesa, com ingredientes estratégicos escolhidos a dedo: presunto infiltrado no queijo, ovos como símbolos da inteligência da resistência, cebolas que fazem até Berlim se emocionar, e azeitonas negras, tão intensas quanto Tóquio.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pizza-card">
+      <img src="Pizza 99ª DP.jpeg" alt="Pizza de Frango com Catupiry - Pizza 99ª DP">
+      <h3>Pizza 99ª DP</h3>
+      <p>R$ 52,90</p>
+      <button onclick="adicionarAoCarrinho('Pizza 99ª DP', 52.90)">Adicionar ao carrinho</button>
+      <div class="extra-info-hover">
+        <div class="detalhes-pizza-hover">
+          <p>Pizza Brooklyn Nine-Nine - A cremosidade do catupiry combina com o humor leve e os momentos de união da delegacia. É o tipo de pizza que o Jake Peralta pediria em uma noite de maratona com Amy e companhia.</p>
+        </div>
+      </div>
+    </div>
+    
+   <div class="pizza-card">
+      <img src="A Força da Horta de Dagobah.jpeg" alt="A Força da Horta de Dagobah">
+      <h3>A Força da Horta de Dagobah</h3>
+      <p>R$ 52,90</p>
+      <button onclick="adicionarAoCarrinho('A Força da Horta de Dagobah', 52.90)">Adicionar ao carrinho</button>
+      <div class="extra-info-hover">
+        <div class="detalhes-pizza-hover">
+          <p>A sabedoria de Yoda em forma de pizza! Sobre nosso pesto verde intenso, a nobre mozzarella de búfala encontra o toque misterioso do queijo de cabra. Uma rica combinação de espinafre fresco, cogumelos terrenos e corações de alcachofra, tudo finalizado com puro azeite e um toque de verdor. Equilíbrio e sabor? Sim, hmmm... Provar, você deve!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="carrinho">
+    <h2>Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p>Total: R$ <span id="total">0.00</span></p>
+    <button id="finalizar-compra" onclick="finalizarCompra()">Finalizar Compra</button>
+  </section>
+
+  <div class="sobrenos-container">
+    <section id="sobre">
+      <h2>Sobre Nós</h2>
+      <p>A Pizzaria PUD é apaixonada por duas coisas: pizzas artesanais e o universo dos games! Fundada por amantes do mundo Geek, nossa missão é unir sabor e nostalgia em cada fatia. Pedir ou não pedir, não há tentativa... Apenas saborear, você deve!</p>
+    </section>
+  </div>
+
+  <div class="localizacao-container">
+    <section id="localizacao">
+      <h2>Localização</h2>
+      <p>R. Ator Paulo Gustavo, 165 - Niterói, Rio de Janeiro</p>
+      <div id="map"></div>
+    </section>
+  </div>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Fale conosco pelo WhatsApp:</p>
+    <a href="https://wa.me/5511961811390" class="whatsapp-btn" target="_blank">Enviar mensagem</a>
+  </section>
+
+  <footer>
+    <p>&copy; PUD PIZZARIA ULTRA DIVERTIDA SINCE 2025</p>
+  </footer>
+
+  <script>
+    let carrinho = [];
+    let total = 0;
+
+    function adicionarAoCarrinho(nome, preco) {
+      const itemExistente = carrinho.find(item => item.nome === nome);
+      if (itemExistente) {
+        itemExistente.quantidade++;
+      } else {
+        carrinho.push({ nome: nome, preco: preco, quantidade: 1 });
+      }
+      atualizarCarrinho();
+    }
+
+    function aumentarQuantidade(index) {
+      if (carrinho[index]) {
+        carrinho[index].quantidade++;
+        atualizarCarrinho();
+      }
+    }
+
+    function diminuirQuantidade(index) {
+      if (carrinho[index]) {
+        carrinho[index].quantidade--;
+        if (carrinho[index].quantidade <= 0) {
+          removerDoCarrinho(index); 
+        } else {
+          atualizarCarrinho();
+        }
+      }
+    }
+
+    function removerDoCarrinho(index) {
+      carrinho.splice(index, 1);
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      const lista = document.getElementById("lista-carrinho");
+      const totalElement = document.getElementById("total");
+      const contadorIconeCarrinho = document.querySelector(".carrinho-contador");
+
+      lista.innerHTML = "";
+      total = 0;
+      let totalItensIcone = 0;
+
+      carrinho.forEach((item, index) => {
+        total += item.preco * item.quantidade;
+        totalItensIcone += item.quantidade;
+
+        lista.innerHTML += `
+          <li>
+            <div class="info-item-carrinho">
+              <span class="item-nome">${item.nome}</span>
+              <span class="item-preco-unitario">R$ ${item.preco.toFixed(2)}/un.</span>
+            </div>
+            <div class="controles-item-carrinho">
+              <button class="btn-qtd" title="Diminuir quantidade" onclick="diminuirQuantidade(${index})">-</button>
+              <span class="item-quantidade">${item.quantidade}</span>
+              <button class="btn-qtd" title="Aumentar quantidade" onclick="aumentarQuantidade(${index})">+</button>
+              <span class="item-subtotal">R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
+              <button class="btn-remover-carrinho" onclick="removerDoCarrinho(${index})">Remover</button>
+            </div>
+          </li>`;
+      });
+
+      totalElement.textContent = total.toFixed(2);
+      contadorIconeCarrinho.textContent = totalItensIcone;
+    }
+
+    function finalizarCompra() {
+      if (carrinho.length > 0) {
+        alert(`Compra finalizada com sucesso! Total: R$ ${total.toFixed(2)}`);
+        carrinho = [];
+        atualizarCarrinho();
+      } else {
+        alert("Seu carrinho está vazio!");
+      }
+    }
+
+    function initMap() {
+      const localizacao = { lat: -22.8834, lng: -43.1031 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 16,
+        center: localizacao,
+      });
+      new google.maps.Marker({
+        position: localizacao,
+        map: map,
+        title: "Pizzaria PUD",
+      });
+    }
+
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const menuItems = document.querySelectorAll('.mobile-menu .menu-item');
+    const bodyOverlay = document.createElement('div'); 
+    bodyOverlay.classList.add('body-overlay');
+    document.body.appendChild(bodyOverlay);
+
+
+    function toggleMenu() {
+      const isActive = mobileMenu.classList.toggle('active');
+      hamburgerBtn.classList.toggle('active');
+      hamburgerBtn.setAttribute('aria-expanded', isActive);
+      mobileMenu.setAttribute('aria-hidden', !isActive);
+      bodyOverlay.classList.toggle('active');
+      document.body.style.overflow = isActive ? 'hidden' : '';
+    }
+
+    hamburgerBtn.addEventListener('click', toggleMenu);
+    closeMenuBtn.addEventListener('click', toggleMenu);
+    bodyOverlay.addEventListener('click', toggleMenu);
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
+    });
+
+  </script>
+
+  <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_Maps_API_KEY&callback=initMap">
+  </script>
+
+</body>
+</html>

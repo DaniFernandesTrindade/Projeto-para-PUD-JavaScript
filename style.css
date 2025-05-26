@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.6;
+  color: #f0f0f0;
+  background-color: #1e1e1e;
+}
+
+.header-pizzaria {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFD700;
+  padding: 15px 30px;
+  color: #1e1e1e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  border-bottom: 3px solid #111;
+  position: relative;
+  z-index: 1001;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+  margin-right: 15px;
+}
+
+.logo-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 22px;
+  font-weight: normal;
+  color: #1e1e1e;
+  margin-right: 40px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  color: #1e1e1e;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  color: #00A8F3;
+  border-bottom-color: #00A8F3;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .carrinho-btn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #1e1e1e;
+  margin-left: 15px;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.header-right .carrinho-btn:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.header-right img {
+  height: 60px;
+  margin-right: 8px;
+}
+
+.carrinho-contador {
+  background: #1e1e1e;
+  color: #FFD700;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  line-height: 1;
+  border: 1px solid #FFD700;
+}
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+  order: -1;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #1e1e1e;
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-btn.active .hamburger-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-btn.active .hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.active .hamburger-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  max-width: 80%;
+  height: 100vh;
+  background-color: #2a2a2a;
+  border-left: 3px solid #FFD700;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.4);
+  z-index: 1050;
+  transition: right 0.35s ease-in-out;
+  padding: 70px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu .close-menu-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2.2em;
+  color: #FFD700;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+
+.mobile-menu .menu-item {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 1.15em;
+  padding: 12px 0;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #444;
+}
+.mobile-menu .menu-item:last-of-type {
+   border-bottom: none;
+}
+.mobile-menu .menu-item:hover {
+  color: #FFD700;
+}
+
+.mobile-menu .whatsapp-menu-link {
+  background-color: #FFD700;
+  color: #1e1e1e !important;
+  padding: 12px 15px;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 25px;
+  font-weight: 700;
+  width: auto;
+  align-self: center;
+  font-family: 'Roboto Mono', monospace;
+  border: 1px solid #1e1e1e;
+}
+.mobile-menu .whatsapp-menu-link:hover {
+  background-color: #FFEE77;
+  border-color: #000;
+}
+
+.body-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.body-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+.pizzas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 30px;
+}
+
+.pizza-card {
+  background-color: #2c2c2c;
+  border: 2px solid #FFD700;
+  border-radius: 6px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(33.333% - 20px);
+  max-width: 310px;
+  box-shadow: 3px 3px 0px #FFD700;
+  text-align: center;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.pizza-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255,215,0,0.4), 3px 3px 0px #FFEE77;
+  z-index: 100;
+}
+
+.pizza-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #444;
+  margin-bottom: 15px;
+}
+
+.pizza-card > h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  color: #FFD700;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.pizza-card > p:nth-of-type(1) {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 18px;
+  color: #FFEE77;
+  margin-bottom: 15px;
+  flex-grow: 0;
+}
+
+.pizza-card > button {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #FFD700;
+  color: #1e1e1e;
+  border: 2px solid #111;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 0.8em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: 100%;
+  margin-top: auto;
+  text-transform: uppercase;
+}
+
+.pizza-card > button:hover {
+  background-color: #FFEE77;
+  color: #000;
+  border-color: #000;
+}
+
+.pizza-card .extra-info-hover {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  width: 280px;
+  background-color: #1e1e1e;
+  border: 2px solid #FFD700;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  z-index: 10;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+  margin-top: 10px;
+}
+
+.pizza-card:hover .extra-info-hover {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  transition-delay: 0.05s;
+}
+
+.pizza-card .extra-info-hover .detalhes-pizza-hover p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  color: #f0f0f0;
+  margin-bottom: 0;
+  text-align: left;
+  line-height: 1.5;
+}
+
+#sobre,
+#localizacao,
+#contato,
+#carrinho {
+  background-color: #2a2a2a; /* Padronizado para fundo escuro */
+  border: 2px solid #FFD700;
+  color: #f0f0f0; /* Padronizado para texto claro */
+  padding: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 10px rgba(255,215,0,0.15);
+  border-radius: 8px;
+  width: 70%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#sobre h2,
+#localizacao h2,
+#contato h2,
+#carrinho h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  color: #FFD700;
+  margin-bottom: 20px;
+  border-bottom: 2px dashed #FFD700;
+  padding-bottom: 10px;
+  display: inline-block;
+  text-shadow: 2px 2px 0 #000;
+}
+
+#sobre p,
+#localizacao p,
+#contato p {
+  font-size: 1.05em;
+  color: #f0f0f0; /* Ajustado para texto claro */
+}
+
+
+#map {
+  width: 100%;
+  height: 350px;
+  margin: 20px auto 0;
+  border: 2px solid #FFD700;
+  border-radius: 4px;
+}
+
+.whatsapp-btn {
+  font-family: 'Press Start 2P', cursive;
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #FFD700;
+  color: #1e1e1e;
+  padding: 12px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid #1e1e1e;
+  text-transform: uppercase;
+}
+
+.whatsapp-btn:hover {
+  background-color: #FFEE77;
+  color: #000;
+  border-color: #000;
+}
+
+#carrinho ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#carrinho li {
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-bottom: 1px dashed #555;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+#carrinho li:last-child {
+  border-bottom: none;
+}
+
+.info-item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.info-item-carrinho .item-nome {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #1e1e1e;
+  margin-right: 10px;
+}
+
+.info-item-carrinho .item-preco-unitario {
+  font-size: 0.9em;
+  color: #333333;
+}
+
+.controles-item-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-qtd {
+  background-color: #e0e0e0;
+  border: 1px solid #1e1e1e;
+  color: #1e1e1e;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8em;
+  min-width: 30px;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-qtd:hover {
+  background-color: #FFD700;
+  color: #1e1e1e;
+}
+
+.item-quantidade {
+  padding: 4px 8px;
+  border: 1px solid #1e1e1e;
+  background-color: #fff;
+  color: #1e1e1e;
+  border-radius: 4px;
+  min-width: 35px;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.item-subtotal {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-left: auto;
+  padding-left: 10px;
+  color: #1e1e1e;
+}
+
+.btn-remover-carrinho {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #550000;
+  color: #FFD700;
+  border: 1px solid #FFD700;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+  margin-left: 10px;
+}
+
+.btn-remover-carrinho:hover {
+  background-color: #880000;
+  color: #fff;
+}
+
+#carrinho p {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  font-weight: normal;
+  color: #FFEE77;
+  margin-top: 30px;
+  text-align: right;
+}
+
+#finalizar-compra {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #39FF14;
+  color: #1e1e1e;
+  border: 2px solid #1e1e1e;
+  padding: 12px 25px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: normal;
+  width: 100%;
+  margin-top: 25px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 0px #111;
+}
+
+#finalizar-compra:hover {
+  background-color: #8EFF7B;
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px #000;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 20px;
+  background-color: #FFD700;
+  color: #1e1e1e;
+  margin-top: 50px;
+  border-top: 3px solid #111;
+}
+
+footer p {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .header-pizzaria {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .header-left .nav-links {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .header-left {
+    margin-bottom: 0;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .logo-text {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  .logo, .header-right img {
+    height: 50px;
+  }
+
+  .pizza-card {
+    flex-basis: calc(50% - 15px);
+    max-width: none;
+    padding: 15px;
+    overflow: visible;
+    box-shadow: 2px 2px 0px #FFD700;
+  }
+
+  .pizza-card > h3 {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .pizza-card > p:nth-of-type(1) {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .pizza-card > button {
+    padding: 8px 12px;
+    font-size: 0.75em;
+  }
+
+  #sobre,
+  #localizacao,
+  #contato,
+  #carrinho {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #sobre h2,
+  #localizacao h2,
+  #contato h2,
+  #carrinho h2 {
+    font-size: 22px;
+    color: #FFD700;
+    border-bottom-color: #FFEE77;
+    text-shadow: 1px 1px 0 #333;
+  }
+
+  .controles-item-carrinho {
+    justify-content: space-around;
+    gap: 6px;
+  }
+  .item-subtotal {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+    color: #1e1e1e;
+  }
+  .btn-remover-carrinho {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+  }
+  .info-item-carrinho .item-nome,
+  .info-item-carrinho .item-preco-unitario {
+      color: #1e1e1e;
+  }
+  .item-quantidade {
+      background-color: #e0e0e0;
+      color: #1e1e1e;
+      border-color: #1e1e1e;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-pizzaria {
+    padding: 10px 15px;
+  }
+  .logo, .header-right img {
+    height: 40px;
+  }
+  .logo-text {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+  .pizza-card {
+    flex-basis: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: none;
+    padding: 15px;
+    box-shadow: 1px 1px 0px #FFD700;
+  }
+  .pizza-card > h3 {
+    font-size: 12px;
+  }
+    .pizza-card > p:nth-of-type(1) {
+    font-size: 14px;
+  }
+  .pizza-card > button {
+    font-size: 0.7em;
+  }
+
+  .info-item-carrinho {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .controles-item-carrinho {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .item-subtotal, .btn-remover-carrinho {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+  .btn-remover-carrinho {
+    margin-top: 5px;
+  }
+
+  #carrinho li {
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+  .retro-section {
+    padding: 15px !important;
+  }
+  .retro-section h2 {
+    font-size: 20px !important;
+  }
+}
